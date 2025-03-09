@@ -1,0 +1,31 @@
+#application-set.yaml
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: argocd-demo
+  namespace: argocd
+spec:
+  generators:
+    - git:
+        repoURL: github.com:shawnifoley/argocd-demo.git
+        revision: HEAD
+        directories:
+          - path: apps/*
+  template:
+    metadata:
+      name: "{{path.basename}}" # Application name will be the directory name (my-app, another-app)
+    spec:
+      project: default
+      source:
+        repoURL: github.com:shawnifoley/argocd-demo.git
+        targetRevision: HEAD
+        path: "{{path.path}}" # Path will be the full directory path (apps/my-app, apps/another-app)
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: "{{path.basename}}-ns" # Namespace named after application
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true

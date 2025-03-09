@@ -1,0 +1,20 @@
+#ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: guestbook-ingress
+  namespace: guestbook-demo-ns
+  annotations:
+    kubernetes.io/ingress.class: guestbook-ui
+spec:
+  rules:
+    - host: guestbook-demo.fol3y.us
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: guestbook-ui
+                port:
+                  number: 80

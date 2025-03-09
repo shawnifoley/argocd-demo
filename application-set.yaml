@@ -7,7 +7,7 @@ metadata:
 spec:
   generators:
     - git:
-        repoURL: github.com:shawnifoley/argocd-demo.git
+        repoURL: https://github.com/shawnifoley/argocd-demo.git
         revision: HEAD
         directories:
           - path: apps/*
@@ -17,7 +17,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: github.com:shawnifoley/argocd-demo.git
+        repoURL: https://github.com/shawnifoley/argocd-demo.git
         targetRevision: HEAD
         path: "{{path.path}}" # Path will be the full directory path (apps/my-app, apps/another-app)
       destination:

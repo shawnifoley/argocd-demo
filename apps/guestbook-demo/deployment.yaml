@@ -9,7 +9,7 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app.kubernetes.io/name: guestbook-demo
+      app.kubernetes.io/name: guestbook
   template:
     metadata:
       labels:

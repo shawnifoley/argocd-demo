@@ -19,7 +19,7 @@ spec:
       source:
         repoURL: https://github.com/shawnifoley/argocd-demo.git
         targetRevision: HEAD
-        path: "{{path.path}}" # Path will be the full directory path (apps/my-app, apps/another-app)
+        path: "apps/{{path.basename}}/"
       destination:
         server: https://kubernetes.default.svc
         namespace: "{{path.basename}}-ns" # Namespace named after application

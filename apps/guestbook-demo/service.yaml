@@ -1,11 +1,12 @@
+#service.yaml
 apiVersion: v1
 kind: Service
 metadata:
-  name: guestbook-ui
+  name: guestbook
   namespace: guestbook-demo-ns
 spec:
   selector:
-    app.kubernetes.io/name: guestbook-ui
+    app.kubernetes.io/name: guestbook
   ports:
     - protocol: TCP
       port: 80

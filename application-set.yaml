@@ -13,7 +13,7 @@ spec:
           - path: apps/*
   template:
     metadata:
-      name: "{{path.basename}}" # Application name will be the directory name (my-app, another-app)
+      name: "{{path.basename}}"
     spec:
       project: default
       source:
@@ -22,7 +22,7 @@ spec:
         path: "apps/{{path.basename}}/"
       destination:
         server: https://kubernetes.default.svc
-        namespace: "{{path.basename}}-ns" # Namespace named after application
+        namespace: "{{path.basename}}-ns"
       syncPolicy:
         automated:
           prune: true

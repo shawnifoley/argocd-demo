@@ -5,7 +5,7 @@ metadata:
   name: guestbook-ingress
   namespace: guestbook-demo-ns
   annotations:
-    kubernetes.io/ingress.class: guestbook-ui
+    kubernetes.io/ingress.class: guestbook
 spec:
   rules:
     - host: guestbook-demo.fol3y.us
@@ -15,6 +15,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: guestbook-ui
+                name: guestbook
                 port:
                   number: 80

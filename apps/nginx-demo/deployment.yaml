@@ -2,22 +2,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-demo
+  name: nginx
   namespace: nginx-demo-ns
   labels:
-    app.kubernetes.io/name: nginx-demo
+    app.kubernetes.io/name: nginx
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app.kubernetes.io/name: nginx-demo
+      app.kubernetes.io/name: nginx
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: nginx-demo
+        app.kubernetes.io/name: nginx
     spec:
       containers:
-        - name: nginx-demo
+        - name: nginx
           image: nginx:latest
           ports:
             - name: http

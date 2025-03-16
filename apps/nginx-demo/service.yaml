@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-demo
+  name: nginx-svc
   namespace: nginx-demo-ns
 spec:
   selector:

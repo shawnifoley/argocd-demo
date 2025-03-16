@@ -1,11 +1,6 @@
      apiVersion: networking.k8s.io/v1
      kind: IngressClass
      metadata:
-       name: nginx
+       name: nginx-demo
      spec:
        controller: k8s.io/ingress-nginx
-       parameters:
-         apiGroup: k8s.io
-         kind: ConfigMap
-         name: nginx-configuration
-         namespace: ingress-nginx

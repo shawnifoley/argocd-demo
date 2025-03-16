@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: guestbook
+  name: guestbook-demo
   namespace: guestbook-demo-ns
   labels:
     app.kubernetes.io/name: guestbook
@@ -9,14 +9,14 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app.kubernetes.io/name: guestbook
+      app.kubernetes.io/name: guestbook-demo
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: guestbook
+        app.kubernetes.io/name: guestbook-demo
     spec:
       containers:
-        - name: guestbook
+        - name: guestbook-demo
           image: gcr.io/heptio-images/ks-guestbook-demo:0.2
           ports:
            - containerPort: 80

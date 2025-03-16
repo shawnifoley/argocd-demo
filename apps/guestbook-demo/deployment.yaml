@@ -4,7 +4,7 @@ metadata:
   name: guestbook-demo
   namespace: guestbook-demo-ns
   labels:
-    app.kubernetes.io/name: guestbook
+    app.kubernetes.io/name: guestbook-demo
 spec:
   replicas: 3
   selector:
@@ -19,4 +19,5 @@ spec:
         - name: guestbook-demo
           image: gcr.io/heptio-images/ks-guestbook-demo:0.2
           ports:
-           - containerPort: 80
+           - name: http
+             containerPort: 80

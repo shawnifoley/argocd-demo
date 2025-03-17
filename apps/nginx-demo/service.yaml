@@ -4,7 +4,10 @@ kind: Service
 metadata:
   name: nginx-svc
   namespace: nginx-demo-ns
+  annotions:
+    metallb.universe.tf/loadBalancerIPs: "192.168.1.40"
 spec:
+  type: LoadBalancer
   selector:
     app.kubernetes.io/name: nginx-demo
   ports:

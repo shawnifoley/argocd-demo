@@ -5,6 +5,7 @@ metadata:
   name: guestbook-svc
   namespace: guestbook-demo-ns
 spec:
+  type: LoadBalancer
   selector:
     app.kubernetes.io/name: guestbook-demo
   ports:

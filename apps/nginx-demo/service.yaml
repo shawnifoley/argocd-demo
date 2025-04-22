@@ -5,7 +5,7 @@ metadata:
   name: nginx-svc
   namespace: nginx-demo-ns
   annotations:
-    metallb.universe.tf/loadBalancer-ip: "192.168.1.41"
+    metallb.universe.tf/loadBalancerIPs: "192.168.1.41"
 spec:
   type: LoadBalancer
   selector:

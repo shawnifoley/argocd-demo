@@ -6,8 +6,7 @@ metadata:
   namespace: argocd
 spec:
   syncPolicy:
-    syncOptions:
-    - ApplyOutOfSyncOnly=true
+    applicationsSyn: create-update
   generators:
     - git:
         repoURL: https://github.com/shawnifoley/argocd-demo.git

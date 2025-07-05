@@ -5,6 +5,9 @@ metadata:
   name: argocd-demo
   namespace: argocd
 spec:
+  syncPolicy:
+    syncOptions:
+    - ApplyOutOfSyncOnly=true
   generators:
     - git:
         repoURL: https://github.com/shawnifoley/argocd-demo.git
